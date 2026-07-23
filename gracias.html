@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es-MX" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090c">
+<meta name="color-scheme" content="light">
+<title>¡Listo! — Egregor</title>
+<meta name="description" content="Confirmación de solicitud de llamada de diagnóstico — Egregor.">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<link href="assets/css/styles.css" rel="stylesheet">
+<style>
+  .thanks-page{min-height:100svh;display:grid;place-items:center;padding:22px;background:var(--bg)}
+  .thanks-shell{width:min(100%,900px);display:grid;overflow:hidden;border-radius:28px;background:var(--paper);color:var(--ink);box-shadow:var(--shadow)}
+  .thanks-copy,.thanks-side{padding:clamp(28px,5vw,56px)}
+  .thanks-copy h1{margin:18px 0 0;font-family:var(--display);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1}
+  .thanks-copy p{color:#6b6f78}
+  .thanks-side{background:#12161d;color:#fff}
+  .thanks-side p{color:rgba(245,241,232,.62)}
+  .summary{margin-top:22px;border-top:1px solid rgba(255,255,255,.14)}
+  .summary div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .summary span{color:rgba(245,241,232,.45);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+  .summary strong{font-size:.86rem;text-align:right}
+  @media(min-width:820px){ .thanks-shell{grid-template-columns:1.05fr .95fr} }
+</style>
+</head>
+<body>
+<main class="thanks-page">
+  <section class="thanks-shell">
+    <div class="thanks-copy">
+      <a href="index.html"><span class="logo-mark"><span class="brace">{</span><span class="e">E</span><span class="brace">}</span></span></a>
+      <span class="eyebrow" style="color:#a97a1e;">Solicitud recibida</span>
+      <h1>¡Listo<span data-name></span>!</h1>
+      <p>Te contactamos hoy por WhatsApp con los horarios para tu llamada de diagnóstico.</p>
+      <div class="hero-actions" style="margin-top:22px;">
+        <a class="btn btn-dark" data-whatsapp href="#"><span>Abrir WhatsApp</span></a>
+        <a class="btn btn-secondary" style="color:#14110b;border-color:rgba(20,17,11,.25);" href="index.html"><span>Volver a la landing</span></a>
+      </div>
+    </div>
+    <aside class="thanks-side">
+      <span class="eyebrow">Tu solicitud</span>
+      <h2 class="display" style="font-size:clamp(1.6rem,3vw,2.2rem);">Resumen de tu diagnóstico</h2>
+      <div class="summary">
+        <div><span>Nombre</span><strong data-field="nombre">—</strong></div>
+        <div><span>Correo</span><strong data-field="email">—</strong></div>
+        <div><span>Teléfono</span><strong data-field="telefono">—</strong></div>
+        <div><span>Para quién</span><strong data-field="audiencia">—</strong></div>
+        <div><span>Nivel</span><strong data-field="nivel">—</strong></div>
+      </div>
+      <p style="margin-top:20px;">Un asesor de Egregor te escribirá para confirmar el horario de tu llamada de diagnóstico gratuita.</p>
+    </aside>
+  </section>
+</main>
+<script src="assets/js/config.js"></script>
+<script src="gracias.js"></script>
+</body>
+</html>
