@@ -173,6 +173,32 @@ html[data-theme="dark"] .nav-links a:after{background:var(--gold-2)}
 .hero-proof-row{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px}
 .hero-proof-row span{position:relative;padding-left:16px;color:rgba(245,241,232,.72);font-size:.78rem;font-weight:600}
 .hero-proof-row span:before{content:"";position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:var(--gold-2)}
+
+/* ---------- Hero mock: mini widget de "clase en vivo" (visual, representa el aprendizaje) ---------- */
+.hero-mock{
+  position:relative;z-index:2;justify-self:end;align-self:center;
+  width:min(100%,320px);padding:20px;border-radius:20px;
+  background:rgba(18,22,28,.62);border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(14px);box-shadow:0 24px 60px rgba(0,0,0,.4);
+  animation:cardFloat 4.2s ease-in-out infinite;
+}
+.hero-mock-head{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.12)}
+.live-dot{position:relative;width:9px;height:9px;border-radius:50%;background:#38d97a;flex:0 0 auto}
+.live-dot:after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid #38d97a;animation:liveDotPulse 1.8s ease-out infinite}
+@keyframes liveDotPulse{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+.hero-mock-head strong{display:block;font-size:.84rem;color:var(--fixed-cream)}
+.hero-mock-head span{display:block;margin-top:1px;font-size:.68rem;color:rgba(245,241,232,.55)}
+.hero-mock-chat{display:grid;gap:8px;padding:14px 0}
+.mock-line{max-width:88%;padding:9px 12px;border-radius:12px;font-size:.72rem;line-height:1.4;color:rgba(245,241,232,.92)}
+.mock-line .mock-tag{display:block;margin-bottom:2px;font-size:.6rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-2)}
+.mock-line.from-teacher{justify-self:start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08)}
+.mock-line.from-you{justify-self:end;background:linear-gradient(135deg, rgba(213,164,58,.28), rgba(213,164,58,.12));border:1px solid rgba(213,164,58,.3)}
+.mock-line.from-you .mock-tag{color:var(--fixed-cream)}
+.hero-mock-foot{padding-top:12px;border-top:1px solid rgba(255,255,255,.12)}
+.hero-mock-foot span{display:block;margin-bottom:8px;font-size:.66rem;color:rgba(245,241,232,.55)}
+.mock-progress{height:6px;border-radius:6px;background:rgba(255,255,255,.12);overflow:hidden}
+.mock-progress i{display:block;height:100%;width:64%;border-radius:6px;background:linear-gradient(90deg,var(--gold),var(--gold-2))}
+
 .hero-bottom{position:absolute;z-index:3;left:50%;bottom:-1px;transform:translateX(-50%);width:min(calc(100% - 30px),1040px);display:grid;grid-template-columns:1fr;border-radius:18px 18px 0 0;background:var(--fixed-panel);border:1px solid rgba(255,255,255,.1);border-bottom:0;box-shadow:0 -12px 30px rgba(0,0,0,.3)}
 .hero-proof{display:flex;gap:12px;align-items:flex-start;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1)}
 .hero-proof:last-child{border-bottom:0}
@@ -468,11 +494,12 @@ html[data-theme="dark"] .review-card .stars{color:var(--gold-2)}
 @media(max-width:640px){
   .section-pad{padding:clamp(48px,12vw,70px) 0}
   .section-head{margin-bottom:32px}
-  .hero{min-height:0}
-  .hero-inner{padding-top:96px;padding-bottom:130px}
+  .hero{flex-direction:column;min-height:0}
+  .hero-inner{padding-top:96px;padding-bottom:26px}
   .hero h1{font-size:clamp(2.1rem,9vw,2.8rem)}
   .hero .lead{font-size:.96rem}
-  .hero-bottom{position:relative;left:auto;bottom:auto;transform:none;width:100%;margin-top:22px;border-radius:18px}
+  .hero-mock{display:none}
+  .hero-bottom{position:relative;left:auto;bottom:auto;transform:none;width:calc(100% - 40px);margin:22px auto 28px;border-radius:18px}
   .section-title{font-size:clamp(1.8rem,8vw,2.6rem)}
   .logo-strip{gap:14px 20px}
   .logo-strip img{max-width:84px;max-height:26px}
